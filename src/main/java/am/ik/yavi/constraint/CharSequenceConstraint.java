@@ -29,8 +29,8 @@ import java.util.function.ToIntFunction;
 import java.util.regex.Pattern;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.*;
-import static am.ik.yavi.core.NullAs.INVALID;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.INVALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.base.ContainerConstraintBase;
 import am.ik.yavi.constraint.charsequence.ByteSizeConstraint;
@@ -41,7 +41,7 @@ import am.ik.yavi.constraint.charsequence.CodePoints.Range;
 import am.ik.yavi.constraint.charsequence.CodePointsConstraint;
 import am.ik.yavi.constraint.charsequence.EmojiConstraint;
 import am.ik.yavi.constraint.charsequence.variant.VariantOptions;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class CharSequenceConstraint<T, E extends CharSequence>
 		extends ContainerConstraintBase<T, E, CharSequenceConstraint<T, E>> {

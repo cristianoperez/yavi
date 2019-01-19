@@ -17,10 +17,10 @@ package am.ik.yavi.constraint;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.BOOLEAN_IS_FALSE;
 import static am.ik.yavi.constraint.ViolationMessage.Default.BOOLEAN_IS_TRUE;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.base.ConstraintBase;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class BooleanConstraint<T>
 		extends ConstraintBase<T, Boolean, BooleanConstraint<T>> {

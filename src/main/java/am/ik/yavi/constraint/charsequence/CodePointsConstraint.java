@@ -23,11 +23,11 @@ import java.util.stream.Collectors;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.CODE_POINTS_ALL_INCLUDED;
 import static am.ik.yavi.constraint.ViolationMessage.Default.CODE_POINTS_NOT_INCLUDED;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.CharSequenceConstraint;
-import am.ik.yavi.core.ConstraintPredicate;
-import am.ik.yavi.core.ViolatedValue;
+import am.ik.yavi.core.builder.ConstraintPredicate;
+import am.ik.yavi.core.builder.ViolatedValue;
 
 public class CodePointsConstraint<T, E extends CharSequence>
 		extends CharSequenceConstraint<T, E> {

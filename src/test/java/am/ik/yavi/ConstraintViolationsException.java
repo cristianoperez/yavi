@@ -15,7 +15,7 @@
  */
 package am.ik.yavi;
 
-import am.ik.yavi.core.ConstraintViolations;
+import am.ik.yavi.core.builder.ConstraintViolations;
 
 public class ConstraintViolationsException extends RuntimeException {
 	private final ConstraintViolations violations;

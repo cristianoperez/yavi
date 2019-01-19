@@ -20,10 +20,10 @@ import java.util.function.ToIntFunction;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.MAP_CONTAINS_KEY;
 import static am.ik.yavi.constraint.ViolationMessage.Default.MAP_CONTAINS_VALUE;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.base.ContainerConstraintBase;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class MapConstraint<T, K, V>
 		extends ContainerConstraintBase<T, Map<K, V>, MapConstraint<T, K, V>> {

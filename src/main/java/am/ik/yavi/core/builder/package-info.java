@@ -13,25 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+@NonNullApi
+package am.ik.yavi.core.builder;
 
-import am.ik.yavi.core.builder.Validator;
-
-public class PhoneNumber {
-	private final String value;
-
-	public PhoneNumber(String value) {
-		this.value = value;
-	}
-
-	public static Validator<PhoneNumber> validator() {
-		return Validator.<PhoneNumber> builder()
-				.constraint((PhoneNumber p) -> p.value, "value",
-						c -> c.notBlank().greaterThanOrEqual(8).lessThanOrEqual(16))
-				.build();
-	}
-
-	public String value() {
-		return this.value;
-	}
-}
+import am.ik.yavi.jsr305.NonNullApi;

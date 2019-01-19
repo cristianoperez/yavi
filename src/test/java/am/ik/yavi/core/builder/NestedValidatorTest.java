@@ -13,25 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+package am.ik.yavi.core.builder;
 
-import am.ik.yavi.core.builder.Validator;
+import am.ik.yavi.Address;
+import am.ik.yavi.Country;
+import am.ik.yavi.PhoneNumber;
 
-public class PhoneNumber {
-	private final String value;
-
-	public PhoneNumber(String value) {
-		this.value = value;
-	}
-
-	public static Validator<PhoneNumber> validator() {
-		return Validator.<PhoneNumber> builder()
-				.constraint((PhoneNumber p) -> p.value, "value",
-						c -> c.notBlank().greaterThanOrEqual(8).lessThanOrEqual(16))
+public class NestedValidatorTest extends AbstractNestedValidatorTest {
+	@Override
+	protected Validator<Address> validator() {
+		return Validator.<Address> builder()
+				.constraint(Address::street, "street", c -> c.notBlank().lessThan(32))
+				.nest(Address::country, "country", Country.validator())
+				.nestIfPresent(Address::phoneNumber, "phoneNumber",
+						PhoneNumber.validator())
 				.build();
-	}
-
-	public String value() {
-		return this.value;
 	}
 }

@@ -13,25 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+package am.ik.yavi.core.builder;
 
-import am.ik.yavi.core.builder.Validator;
+import java.util.Objects;
 
-public class PhoneNumber {
-	private final String value;
+import am.ik.yavi.jsr305.Nullable;
 
-	public PhoneNumber(String value) {
+public class ViolatedValue {
+	private final Object value;
+
+	public ViolatedValue(@Nullable Object value) {
 		this.value = value;
 	}
 
-	public static Validator<PhoneNumber> validator() {
-		return Validator.<PhoneNumber> builder()
-				.constraint((PhoneNumber p) -> p.value, "value",
-						c -> c.notBlank().greaterThanOrEqual(8).lessThanOrEqual(16))
-				.build();
+	@Nullable
+	public Object value() {
+		return this.value;
 	}
 
-	public String value() {
-		return this.value;
+	@Override
+	public String toString() {
+		return Objects.toString(this.value, "");
 	}
 }

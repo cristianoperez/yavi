@@ -27,7 +27,7 @@ import am.ik.yavi.constraint.CharSequenceConstraint;
 import am.ik.yavi.constraint.charsequence.CodePoints.CodePointsRanges;
 import am.ik.yavi.constraint.charsequence.CodePoints.CodePointsSet;
 import am.ik.yavi.constraint.charsequence.CodePoints.Range;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class CodePointsConstraintTest {
 

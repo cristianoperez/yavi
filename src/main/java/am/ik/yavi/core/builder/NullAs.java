@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+package am.ik.yavi.core.builder;
 
-import am.ik.yavi.core.builder.Validator;
+public enum NullAs {
+	INVALID(false), VALID(true);
 
-public class PhoneNumber {
-	private final String value;
+	private final boolean skipNull;
 
-	public PhoneNumber(String value) {
-		this.value = value;
+	NullAs(boolean skipNull) {
+		this.skipNull = skipNull;
 	}
 
-	public static Validator<PhoneNumber> validator() {
-		return Validator.<PhoneNumber> builder()
-				.constraint((PhoneNumber p) -> p.value, "value",
-						c -> c.notBlank().greaterThanOrEqual(8).lessThanOrEqual(16))
-				.build();
-	}
-
-	public String value() {
-		return this.value;
+	public boolean skipNull() {
+		return this.skipNull;
 	}
 }

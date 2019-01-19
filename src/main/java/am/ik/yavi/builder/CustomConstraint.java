@@ -13,25 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+package am.ik.yavi.builder;
 
-import am.ik.yavi.core.builder.Validator;
+import java.util.function.Predicate;
 
-public class PhoneNumber {
-	private final String value;
+import am.ik.yavi.constraint.ViolationMessage;
 
-	public PhoneNumber(String value) {
-		this.value = value;
-	}
-
-	public static Validator<PhoneNumber> validator() {
-		return Validator.<PhoneNumber> builder()
-				.constraint((PhoneNumber p) -> p.value, "value",
-						c -> c.notBlank().greaterThanOrEqual(8).lessThanOrEqual(16))
-				.build();
-	}
-
-	public String value() {
-		return this.value;
-	}
+public interface CustomConstraint<V> extends Predicate<V>, ViolationMessage {
 }

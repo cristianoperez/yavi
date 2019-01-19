@@ -18,10 +18,10 @@ package am.ik.yavi.constraint.array;
 import java.util.function.ToIntFunction;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.ARRAY_CONTAINS;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.base.ContainerConstraintBase;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class FloatArrayConstraint<T>
 		extends ContainerConstraintBase<T, float[], FloatArrayConstraint<T>> {

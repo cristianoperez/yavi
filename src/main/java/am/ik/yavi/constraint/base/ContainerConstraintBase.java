@@ -21,12 +21,12 @@ import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.*;
-import static am.ik.yavi.core.NullAs.INVALID;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.INVALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.Constraint;
-import am.ik.yavi.core.ConstraintPredicate;
-import am.ik.yavi.core.ViolatedValue;
+import am.ik.yavi.core.builder.ConstraintPredicate;
+import am.ik.yavi.core.builder.ViolatedValue;
 
 public abstract class ContainerConstraintBase<T, V, C extends Constraint<T, V, C>>
 		extends ConstraintBase<T, V, C> {

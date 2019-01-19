@@ -202,7 +202,7 @@ HttpStatus status = either.fold(v -> HttpStatus.BAD_REQUEST, u -> HttpStatus.OK)
 
 #### Conditional Constraint
 
-You can impose a condition on constraints with [`ConstraintCondition`](src/main/java/am/ik/yavi/core/ConstraintCondition.java) interface:
+You can impose a condition on constraints with [`ConstraintCondition`](src/main/java/am/ik/yavi/core/builder/builder/ConstraintCondition.java) interface:
 
 ```java
 Validator<User> validator = Validator.builder(User.class) //
@@ -212,7 +212,7 @@ Validator<User> validator = Validator.builder(User.class) //
         .build();
 ```
 
-You can group the constraint as a part of `ConstraintCondition` with [`ConstraintGroup`](src/main/java/am/ik/yavi/core/ConstraintGroup.java) aas well:
+You can group the constraint as a part of `ConstraintCondition` with [`ConstraintGroup`](src/main/java/am/ik/yavi/core/builder/builder/ConstraintGroup.java) aas well:
 
 ```java
 enum Group implements ConstraintGroup {
@@ -328,7 +328,7 @@ public String createUser(Model model, UserForm userForm, BindingResult bindingRe
 ```kotlin
 package com.example
 
-import am.ik.yavi.core.Validator
+import Validator
 import org.springframework.fu.kofu.application
 import org.springframework.fu.kofu.web.jackson
 import org.springframework.fu.kofu.web.server
@@ -373,7 +373,7 @@ fun main(args: Array<String>) = app.run()
 ```kotlin
 package com.example
 
-import am.ik.yavi.core.Validator
+import Validator
 import am.ik.yavi.core.constraint
 import am.ik.yavi.core.nest
 import io.ktor.application.Application

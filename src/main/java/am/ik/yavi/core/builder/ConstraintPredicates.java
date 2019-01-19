@@ -13,25 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+package am.ik.yavi.core.builder;
 
-import am.ik.yavi.core.builder.Validator;
+import java.util.Deque;
+import java.util.function.Function;
 
-public class Country {
+public class ConstraintPredicates<T, V> {
+	private final Function<T, V> toValue;
 	private final String name;
+	private final Deque<ConstraintPredicate<V>> predicates;
 
-	public Country(String name) {
+	public ConstraintPredicates(Function<T, V> toValue, String name,
+			Deque<ConstraintPredicate<V>> predicates) {
+		this.toValue = toValue;
 		this.name = name;
+		this.predicates = predicates;
 	}
 
-	public static Validator<Country> validator() {
-		return Validator.<Country> builder()
-				.constraint(Country::name, "name", c -> c.notBlank() //
-						.greaterThanOrEqual(2))
-				.build();
+	public final Function<T, V> toValue() {
+		return this.toValue;
 	}
 
-	public String name() {
+	public final String name() {
 		return this.name;
+	}
+
+	public final Deque<ConstraintPredicate<V>> predicates() {
+		return this.predicates;
 	}
 }

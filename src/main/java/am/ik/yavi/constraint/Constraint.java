@@ -22,9 +22,9 @@ import java.util.function.Predicate;
 import static am.ik.yavi.constraint.ViolationMessage.Default.OBJECT_IS_NULL;
 import static am.ik.yavi.constraint.ViolationMessage.Default.OBJECT_NOT_NULL;
 
-import am.ik.yavi.core.ConstraintPredicate;
-import am.ik.yavi.core.CustomConstraint;
-import am.ik.yavi.core.NullAs;
+import am.ik.yavi.core.builder.ConstraintPredicate;
+import am.ik.yavi.builder.CustomConstraint;
+import am.ik.yavi.core.builder.NullAs;
 
 public interface Constraint<T, V, C extends Constraint<T, V, C>> {
 

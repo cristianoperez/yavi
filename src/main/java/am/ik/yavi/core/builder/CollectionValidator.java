@@ -13,25 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package am.ik.yavi;
+package am.ik.yavi.core.builder;
 
-import am.ik.yavi.core.builder.Validator;
+import java.util.Collection;
+import java.util.function.Function;
 
-public class PhoneNumber {
-	private final String value;
+public class CollectionValidator<T, N extends Collection<E>, E> {
+	private final Function<T, N> toCollection;
+	private final String name;
+	private final Validator<E> validator;
 
-	public PhoneNumber(String value) {
-		this.value = value;
+	public CollectionValidator(Function<T, N> toCollection, String name,
+			Validator<E> validator) {
+		this.toCollection = toCollection;
+		this.name = name;
+		this.validator = validator;
 	}
 
-	public static Validator<PhoneNumber> validator() {
-		return Validator.<PhoneNumber> builder()
-				.constraint((PhoneNumber p) -> p.value, "value",
-						c -> c.notBlank().greaterThanOrEqual(8).lessThanOrEqual(16))
-				.build();
+	public Function<T, N> toCollection() {
+		return this.toCollection;
 	}
 
-	public String value() {
-		return this.value;
+	public String name() {
+		return this.name;
+	}
+
+	public Validator<E> validator() {
+		return this.validator;
 	}
 }

@@ -18,11 +18,11 @@ package am.ik.yavi.constraint.charsequence;
 import java.text.Normalizer;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.*;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.CharSequenceConstraint;
 import am.ik.yavi.constraint.charsequence.variant.VariantOptions;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class EmojiConstraint<T, E extends CharSequence>
 		extends CharSequenceConstraint<T, E> {

@@ -18,10 +18,10 @@ package am.ik.yavi.constraint.base;
 import java.util.function.Predicate;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.*;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.Constraint;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public abstract class NumericConstraintBase<T, V, C extends Constraint<T, V, C>>
 		extends ConstraintBase<T, V, C> {

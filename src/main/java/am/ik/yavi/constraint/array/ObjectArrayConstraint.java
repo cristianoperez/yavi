@@ -19,10 +19,10 @@ import java.util.Arrays;
 import java.util.function.ToIntFunction;
 
 import static am.ik.yavi.constraint.ViolationMessage.Default.ARRAY_CONTAINS;
-import static am.ik.yavi.core.NullAs.VALID;
+import static am.ik.yavi.core.builder.NullAs.VALID;
 
 import am.ik.yavi.constraint.base.ContainerConstraintBase;
-import am.ik.yavi.core.ConstraintPredicate;
+import am.ik.yavi.core.builder.ConstraintPredicate;
 
 public class ObjectArrayConstraint<T, E>
 		extends ContainerConstraintBase<T, E[], ObjectArrayConstraint<T, E>> {
